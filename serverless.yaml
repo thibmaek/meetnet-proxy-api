@@ -1,0 +1,22 @@
+service:
+  name: meetnet-proxy-api
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs10.15
+  stage: ${opt:stage, 'dev'}
+  region: eu-east-1
+  environment:
+    USERNAME: ${file(./env.${self:provider.stage}.json):username}
+    PASSWORD: ${file(./env.${self:provider.stage}.json):password}
+
+functions:
+  meetnet_proxy_api:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
