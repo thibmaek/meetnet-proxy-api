@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "sls offline",
-    "build": "sls package --stage production -p dist",
+    "build": "sls package -p dist --stage prod",
     "deploy:dev": "sls deploy --stage dev",
     "deploy:prod": "sls deploy --stage prod"
   },
