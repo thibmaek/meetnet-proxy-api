@@ -1,0 +1,9 @@
+# Sensitive
+env.prod.json
+env.json
+
+# Dependencies
+node_modules
+
+# Artifacts
+.webpack
