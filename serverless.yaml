@@ -9,7 +9,7 @@ provider:
   name: aws
   runtime: nodejs10.15
   stage: ${opt:stage, 'dev'}
-  region: eu-east-1
+  region: eu-central-1
   environment:
     USERNAME: ${file(./env.${self:provider.stage}.json):username}
     PASSWORD: ${file(./env.${self:provider.stage}.json):password}
