@@ -7,7 +7,7 @@ import { Request } from 'express';
  * the express middleware
  */
 const proxy = async (request: Request, options = {}) => {
-  const { body } = await got(request.originalUrl, {
+  const { body } = await got(request.url, {
     baseUrl: 'https://api.meetnetvlaamsebanken.be/V2',
     json: true,
     headers: {
